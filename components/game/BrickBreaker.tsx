@@ -23,10 +23,8 @@ export function BrickBreaker() {
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(3);
 
-  // Key tracking
   const keys = useRef<{ left: boolean; right: boolean }>({ left: false, right: false });
 
-  // Virtual canvas dimensions (480 x 280 for compact 600px width container)
   const virtualWidth = 480;
   const virtualHeight = 280;
 
@@ -49,7 +47,6 @@ export function BrickBreaker() {
 
   const bricksRef = useRef<Brick[]>([]);
 
-  // Initialize Bricks
   const initBricks = useCallback(() => {
     const rows = 4;
     const cols = 8;
@@ -85,7 +82,6 @@ export function BrickBreaker() {
     bricksRef.current = newBricks;
   }, [virtualWidth]);
 
-  // Reset Ball & Paddle
   const resetBallAndPaddle = useCallback(() => {
     paddleRef.current.x = virtualWidth / 2 - 38;
     ballRef.current.x = virtualWidth / 2;
@@ -95,7 +91,6 @@ export function BrickBreaker() {
     ballRef.current.dy = -4 * Math.abs(Math.cos(angle));
   }, [virtualWidth, virtualHeight]);
 
-  // Start Game
   const startGame = useCallback(() => {
     initBricks();
     resetBallAndPaddle();
@@ -108,7 +103,6 @@ export function BrickBreaker() {
     startGame();
   };
 
-  // Keyboard Listeners
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft" || e.key === "a" || e.key === "A") {
@@ -116,7 +110,6 @@ export function BrickBreaker() {
       } else if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") {
         keys.current.right = true;
       } else if (e.key === " ") {
-        // Spacebar to start
         if (gameState !== "playing") {
           e.preventDefault();
           startGame();
@@ -140,7 +133,6 @@ export function BrickBreaker() {
     };
   }, [gameState, startGame]);
 
-  // Pointer drag on canvas
   const handlePointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
     if (gameState !== "playing" || !canvasRef.current) return;
     const rect = canvasRef.current.getBoundingClientRect();
@@ -153,7 +145,6 @@ export function BrickBreaker() {
     );
   };
 
-  // Game Loop
   useEffect(() => {
     if (gameState !== "playing") {
       if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
@@ -174,7 +165,6 @@ export function BrickBreaker() {
       const ball = ballRef.current;
       const bricks = bricksRef.current;
 
-      // 1. Move Paddle
       if (keys.current.left) {
         paddle.x = Math.max(6, paddle.x - paddle.speed);
       }
@@ -182,11 +172,9 @@ export function BrickBreaker() {
         paddle.x = Math.min(virtualWidth - paddle.width - 6, paddle.x + paddle.speed);
       }
 
-      // 2. Move Ball
       ball.x += ball.dx;
       ball.y += ball.dy;
 
-      // 3. Wall collisions
       if (ball.x - ball.radius <= 0) {
         ball.x = ball.radius;
         ball.dx = Math.abs(ball.dx);
@@ -200,7 +188,6 @@ export function BrickBreaker() {
         ball.dy = Math.abs(ball.dy);
       }
 
-      // 4. Floor collision
       if (ball.y + ball.radius >= virtualHeight) {
         setLives((prev) => {
           const nextLives = prev - 1;
@@ -213,7 +200,6 @@ export function BrickBreaker() {
         });
       }
 
-      // 5. Paddle collision
       if (
         ball.y + ball.radius >= paddle.y &&
         ball.y - ball.radius <= paddle.y + paddle.height &&
@@ -226,7 +212,6 @@ export function BrickBreaker() {
         ball.dx = hitPoint * 4.8;
       }
 
-      // 6. Brick collisions
       let hitAny = false;
       let remainingCount = 0;
 
@@ -262,15 +247,12 @@ export function BrickBreaker() {
         } catch {}
       }
 
-      // 7. Render
       ctx.clearRect(0, 0, virtualWidth, virtualHeight);
 
-      // Draw subtle boundary
       ctx.strokeStyle = "rgba(0, 0, 0, 0.04)";
       ctx.lineWidth = 1;
       ctx.strokeRect(2, 2, virtualWidth - 4, virtualHeight - 4);
 
-      // Draw Bricks
       for (const b of bricks) {
         if (!b.intact) continue;
         ctx.fillStyle = b.color;
@@ -279,13 +261,11 @@ export function BrickBreaker() {
         ctx.fill();
       }
 
-      // Draw Paddle
       ctx.fillStyle = "#181818";
       ctx.beginPath();
       ctx.roundRect(paddle.x, paddle.y, paddle.width, paddle.height, 4);
       ctx.fill();
 
-      // Draw Ball
       ctx.fillStyle = "#8614FF";
       ctx.beginPath();
       ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
@@ -307,7 +287,6 @@ export function BrickBreaker() {
       ref={containerRef}
       className="mt-14 max-w-[600px] mx-auto select-none"
     >
-      {/* 1-2 lines of text — Flowy & Minimal as requested */}
       <div className="flex items-center justify-between text-[15px] text-[#888884] mb-3 px-1">
         <span>press <strong className="text-[#181818] font-semibold">space</strong> to start</span>
         {gameState === "playing" ? (
@@ -320,7 +299,6 @@ export function BrickBreaker() {
         )}
       </div>
 
-      {/* Flowy Minimal Arena — Max width: 600px */}
       <div className="relative overflow-hidden rounded-2xl bg-[#FAFAFA] border border-[#ECECE8] shadow-[0_4px_20px_rgba(0,0,0,0.02)] aspect-[16/10]">
         <canvas
           ref={canvasRef}
@@ -330,7 +308,6 @@ export function BrickBreaker() {
           className="w-full h-full block cursor-ew-resize touch-none"
         />
 
-        {/* Minimal Flowy State Overlays */}
         {gameState !== "playing" && (
           <div
             onClick={startGame}
@@ -380,7 +357,6 @@ export function BrickBreaker() {
         )}
       </div>
 
-      {/* Minimal On-Screen Controls for mobile / touch */}
       <div className="mt-3 flex items-center justify-center gap-3 sm:hidden">
         <button
           onTouchStart={(e) => {

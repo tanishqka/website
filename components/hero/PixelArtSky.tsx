@@ -8,7 +8,6 @@ interface PixelArtSkyProps {
   getWireAngle: (x: number) => number;
 }
 
-// 8-bit Pixel Cloud SVG — Reduced size & gentle airy opacity
 function PixelCloud({
   initialX,
   y,
@@ -34,7 +33,6 @@ function PixelCloud({
 
       setPosX((prev) => {
         const next = prev + speed * delta;
-        // Wrap around when past right side
         return next > 2200 ? -200 : next;
       });
 
@@ -64,7 +62,6 @@ function PixelCloud({
         shapeRendering="crispEdges"
         className="fill-[#9E9E96]"
       >
-        {/* Pixel Art Cloud Silhouette */}
         <rect x="8" y="2" width="12" height="2" />
         <rect x="6" y="4" width="18" height="2" />
         <rect x="2" y="6" width="26" height="2" />
@@ -75,7 +72,6 @@ function PixelCloud({
   );
 }
 
-// 8-bit Pixel Airplane with trailing contrail — Scaled up and moved higher in the sky
 function PixelAirplane({ containerWidth }: { containerWidth: number }) {
   const [isActive, setIsActive] = useState(true);
   const [pos, setPos] = useState({ x: -120, y: 12 });
@@ -86,21 +82,19 @@ function PixelAirplane({ containerWidth }: { containerWidth: number }) {
   useEffect(() => {
     let lastTime = performance.now();
     let currentX = -140;
-    // Moved slightly higher up in the sky as requested (y: 6 to 18)
     const startY = 6 + Math.random() * 12;
     let currentY = startY;
-    const speed = 30; // Smooth and non-distracting pace
+    const speed = 30;
 
     const fly = (now: number) => {
       const dt = (now - lastTime) / 1000;
       lastTime = now;
 
       currentX += speed * dt;
-      currentY += speed * 0.05 * dt; // very subtle drift
+      currentY += speed * 0.05 * dt;
 
       setPos({ x: currentX, y: currentY });
 
-      // Add contrail puffs behind tail
       trailCounter.current += 1;
       if (trailCounter.current % 12 === 0) {
         setTrail((prev) => [
@@ -114,14 +108,12 @@ function PixelAirplane({ containerWidth }: { containerWidth: number }) {
         ]);
       }
 
-      // Age existing trail puffs
       setTrail((prev) =>
         prev
           .map((p) => ({ ...p, opacity: p.opacity - 0.005 }))
           .filter((p) => p.opacity > 0.05)
       );
 
-      // Once offscreen on right, wait randomly before next flyby
       if (currentX > containerWidth + 180) {
         setIsActive(false);
         setTimeout(() => {
@@ -148,7 +140,6 @@ function PixelAirplane({ containerWidth }: { containerWidth: number }) {
 
   return (
     <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-      {/* Contrail trail behind plane */}
       {trail.map((p) => (
         <div
           key={p.id}
@@ -162,7 +153,6 @@ function PixelAirplane({ containerWidth }: { containerWidth: number }) {
         />
       ))}
 
-      {/* Larger Pixel Airplane (width: 48, height: 24) */}
       <div
         style={{
           position: "absolute",
@@ -178,17 +168,12 @@ function PixelAirplane({ containerWidth }: { containerWidth: number }) {
           shapeRendering="crispEdges"
           className="drop-shadow-xs"
         >
-          {/* Nose */}
           <rect x="13" y="3" width="2" height="2" fill="#8614FF" />
-          {/* Body */}
           <rect x="4" y="3" width="9" height="2" fill="#1C1C1C" />
           <rect x="7" y="2" width="5" height="1" fill="#FFFFFF" />
-          {/* Wing top */}
           <rect x="6" y="0" width="3" height="3" fill="#8614FF" />
           <rect x="7" y="1" width="2" height="2" fill="#181818" />
-          {/* Wing bottom */}
           <rect x="6" y="5" width="3" height="2" fill="#8614FF" />
-          {/* Tail fin */}
           <rect x="1" y="1" width="2" height="3" fill="#8614FF" />
           <rect x="0" y="2" width="2" height="1" fill="#1C1C1C" />
         </svg>
@@ -197,7 +182,6 @@ function PixelAirplane({ containerWidth }: { containerWidth: number }) {
   );
 }
 
-// 8-bit Pixel Bird sitting and flying on the thread — Scaled up
 function PixelBird({
   birdId,
   baseXPercent,
@@ -295,7 +279,6 @@ function PixelBird({
   }, [state]);
 
   const currentX = perchedX + flightOffset.x;
-  // Bird sits with feet on top of the wire (wireY - 18px for larger 34x29 size)
   const currentY = wireY - 18 + flightOffset.y;
   const rotation = state === "perched" ? wireAngle : facingLeft ? -12 : 12;
 
@@ -310,7 +293,6 @@ function PixelBird({
         pointerEvents: "none",
       }}
     >
-      {/* Scaled up Bird SVG (width: 34, height: 29) */}
       <svg
         width="34"
         height="29"
@@ -319,7 +301,6 @@ function PixelBird({
         className="drop-shadow-xs"
       >
         {state === "perched" ? (
-          // Perched Bird
           <>
             <rect x="5" y="2" width="2" height="1" fill="#E89820" />
             <rect x="3" y="1" width="2" height="2" fill="#181818" />
@@ -330,7 +311,6 @@ function PixelBird({
             <rect x="2" y="5" width="2" height="1" fill="#E89820" />
           </>
         ) : wingFlap ? (
-          // Flying Bird — Wing Up
           <>
             <rect x="5" y="2" width="2" height="1" fill="#E89820" />
             <rect x="3" y="1" width="2" height="2" fill="#181818" />
@@ -340,7 +320,6 @@ function PixelBird({
             <rect x="0" y="3" width="1" height="1" fill="#181818" />
           </>
         ) : (
-          // Flying Bird — Wing Down
           <>
             <rect x="5" y="2" width="2" height="1" fill="#E89820" />
             <rect x="3" y="1" width="2" height="2" fill="#181818" />
@@ -362,7 +341,6 @@ export function PixelArtSky({
 }: PixelArtSkyProps) {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
-      {/* 1. Subtle, gentle drifting clouds with reduced size and opacity */}
       <PixelCloud initialX={20} y={8} speed={7} scale={0.95} opacity={0.22} />
       <PixelCloud initialX={containerWidth * 0.22} y={22} speed={10} scale={1.1} opacity={0.24} />
       <PixelCloud initialX={containerWidth * 0.44} y={10} speed={8} scale={0.9} opacity={0.18} />
@@ -370,10 +348,8 @@ export function PixelArtSky({
       <PixelCloud initialX={containerWidth * 0.85} y={12} speed={9} scale={1.05} opacity={0.2} />
       <PixelCloud initialX={containerWidth * 0.35} y={36} speed={6} scale={0.85} opacity={0.18} />
 
-      {/* 2. Top-left pixel airplane placed slightly higher and larger */}
       <PixelAirplane containerWidth={containerWidth} />
 
-      {/* 3. Larger pixel birds perched on the curved thread */}
       <PixelBird
         birdId="bird-left"
         baseXPercent={0.24}

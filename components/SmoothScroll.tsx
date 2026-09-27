@@ -16,7 +16,6 @@ function AnchorScrollHandler() {
       const href = target.getAttribute("href");
       if (!href) return;
 
-      // Check if it's an on-page anchor link (e.g. "#projects", "#about", "#contact" or "/#projects")
       const isHashLink = href.startsWith("#");
       const isHomeHashLink =
         href.startsWith("/#") &&
@@ -46,7 +45,6 @@ function AnchorScrollHandler() {
     };
   }, [lenis]);
 
-  // Handle initial hash in URL on mount
   useEffect(() => {
     if (!lenis || typeof window === "undefined") return;
     const hash = window.location.hash.replace("#", "");

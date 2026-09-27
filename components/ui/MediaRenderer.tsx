@@ -58,8 +58,6 @@ export function MediaRenderer({
           />
         ) : (
           <div className="relative w-full overflow-hidden flex items-center justify-center">
-            {/* Native img or next/image */}
-            {/* Using <img> for full responsive SVGs and local assets without layout shifts */}
             <img
               src={src}
               alt={alt}

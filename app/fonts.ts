@@ -1,9 +1,5 @@
 import localFont from "next/font/local";
 
-/**
- * Primary Portfolio Font Configuration: ESRebondGrotesque
- * Using Medium and Semibold weights (Normal & Italic)
- */
 export const primaryFont = localFont({
   src: [
     {

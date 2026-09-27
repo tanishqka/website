@@ -2,7 +2,6 @@
 @import "lenis/dist/lenis.css";
 
 :root {
-  /* Bright, Airy, Editorial Palette */
   --bg-main: #FFFFFF;
   --surface-main: #FAFAFA;
   --surface-muted: #F4F4F2;
@@ -14,19 +13,16 @@
   --border-dashed: #DCDCD8;
   --border-focus: #121212;
   
-  /* Signature Vibrant Violet Accent */
   --accent-crimson: #8614FF;
   --accent-crimson-bright: #8614FF;
   --accent-hover: #700FDB;
   --accent-muted: rgba(134, 20, 255, 0.08);
   --accent-light: #F3E8FF;
 
-  /* Subtle tactile shadows */
   --shadow-subtle: 0 2px 6px rgba(0, 0, 0, 0.03);
   --shadow-float: 0 16px 36px -8px rgba(0, 0, 0, 0.08);
   --shadow-folder: 0 14px 30px -6px rgba(0, 0, 0, 0.07);
 
-  /* Scrapbook paper surface */
   --paper-cream: #F8F7F2;
   --paper-edge: #EBE8DF;
 }
@@ -48,7 +44,6 @@
   --text-sm: 15px;
 }
 
-/* Base Body Styling: Pure White, Airy Canvas, Single Font ESRebondGrotesque everywhere */
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -69,7 +64,6 @@ body {
   padding: 0;
 }
 
-/* Enforce rule: Base font size and no text below 15px anywhere */
 .text-xs,
 .text-sm,
 .text-\[8px\],
@@ -87,7 +81,6 @@ figcaption {
   line-height: 1.4 !important;
 }
 
-/* On mobile viewports: ensure clear legibility and never drop below 15px */
 @media (max-width: 640px) {
   html, body {
     font-size: 16px;
@@ -97,26 +90,22 @@ figcaption {
   }
 }
 
-/* Remove mono and serif font usage site-wide as requested */
 code, kbd, samp, pre, .font-mono, .font-serif {
   font-family: var(--font-primary), system-ui, sans-serif !important;
 }
 
-/* Crisp, intentional dot grid with enhanced visibility */
 .dot-grid-bg {
   background-color: #FFFFFF;
   background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1.25px, transparent 1.25px);
   background-size: 24px 24px;
 }
 
-/* Subtle paper texture overlay */
 .paper-texture-subtle {
   background-color: var(--paper-cream);
   background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 16px 16px;
 }
 
-/* Frosted Glass Folder effect */
 .folder-frosted {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(245, 245, 243, 0.75) 100%);
   backdrop-filter: blur(14px);
@@ -125,19 +114,16 @@ code, kbd, samp, pre, .font-mono, .font-serif {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
-/* Focus styles for accessibility */
 *:focus-visible {
   outline: 2px solid var(--accent-crimson);
   outline-offset: 2px;
 }
 
-/* Selection highlight */
 ::selection {
   background-color: var(--accent-light);
   color: var(--accent-crimson);
 }
 
-/* Utility to respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;

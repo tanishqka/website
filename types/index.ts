@@ -8,9 +8,8 @@ export interface EmergentImage {
 export interface EmergentCollection {
   slug: string;
   title: string;
-  date: string; // MM/YY format e.g. "09/26"
+  date: string;
   description: string;
-  category?: string;
   accentColor?: string;
   images: EmergentImage[];
 }
@@ -19,7 +18,7 @@ export interface CaseStudyFrontmatter {
   title: string;
   slug: string;
   description: string;
-  date: string; // Month, YYYY format e.g. "February, 2026"
+  date: string;
   cover: string;
   role: string;
   type: string;

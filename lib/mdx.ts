@@ -55,7 +55,6 @@ export function getCaseStudyBySlug(slug: string): {
   } else if (fs.existsSync(altPath)) {
     targetPath = altPath;
   } else {
-    // Search by frontmatter slug
     const files = fs.readdirSync(CASE_STUDIES_DIR);
     for (const f of files) {
       if (!f.endsWith(".mdx") && !f.endsWith(".md")) continue;

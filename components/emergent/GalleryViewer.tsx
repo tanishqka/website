@@ -26,7 +26,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
     );
   }, [collection]);
 
-  // Keyboard navigation
   useEffect(() => {
     if (!collection) return;
 
@@ -44,7 +43,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [collection, handleNext, handlePrev, onClose]);
 
-  // Touch swipe support for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -77,7 +75,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
         aria-modal="true"
         aria-label={`${collection.title} Gallery Archive`}
       >
-        {/* Backdrop Overlay */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -86,7 +83,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
           className="absolute inset-0 bg-[#181818]/60 backdrop-blur-md"
         />
 
-        {/* Modal Window Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -94,7 +90,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
           transition={{ type: "spring", stiffness: 320, damping: 28 }}
           className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-2xl border border-[#D8D8D4] bg-[#F5F5F2] shadow-2xl overflow-hidden z-10"
         >
-          {/* Header Bar */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#D8D8D4] bg-[#ECECE8]">
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#8614FF]" />
@@ -103,7 +98,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
                   {collection.title}
                 </h2>
                 <div className="text-[15px] text-[#666666]">
-                  {collection.category} {"//"} {collection.date}
+                 {collection.date}
                 </div>
               </div>
             </div>
@@ -123,13 +118,11 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
             </div>
           </div>
 
-          {/* Main Visual Display Area */}
           <div
             className="relative flex-1 bg-[#ECECE8]/40 p-4 sm:p-8 flex items-center justify-center overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Previous Button */}
             <button
               onClick={handlePrev}
               className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#F5F5F2]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#8614FF] hover:text-[#F5F5F2] hover:border-[#8614FF] flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF]"
@@ -138,7 +131,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
               <ChevronLeft className="w-5 h-5" />
             </button>
 
-            {/* Next Button */}
             <button
               onClick={handleNext}
               className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#F5F5F2]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#8614FF] hover:text-[#F5F5F2] hover:border-[#8614FF] flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF]"
@@ -147,7 +139,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
               <ChevronRight className="w-5 h-5" />
             </button>
 
-            {/* Active Image with Transition */}
             <div className="relative max-h-[52vh] w-full flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -168,7 +159,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
             </div>
           </div>
 
-          {/* Caption & Metadata Footer */}
           <div className="px-6 py-4 border-t border-[#D8D8D4] bg-[#F5F5F2] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="max-w-2xl">
               <div className="flex items-center gap-2 mb-1">
@@ -182,7 +172,6 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
               </p>
             </div>
 
-            {/* Thumbnail Filmstrip */}
             <div className="flex items-center gap-2 shrink-0 overflow-x-auto py-1">
               {collection.images.map((img, idx) => (
                 <button

@@ -47,14 +47,12 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
   return (
     <section id="projects" className="relative py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        {/* Heading above emergent folders */}
         <div className="text-center mb-10">
           <span className="text-[15px] font-semibold uppercase tracking-wider text-[#888884]">
             my recent work from emergent
           </span>
         </div>
 
-        {/* 1. Emergent Folders: 1 column on mobile, 2x2 on sm: and up (max-width: 600px) */}
         <div className="max-w-[600px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 mb-28 justify-items-center">
           {emergentCollections.map((collection, index) => (
             <FolderCard
@@ -66,14 +64,12 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
           ))}
         </div>
 
-        {/* Heading above other case studies */}
         <div className="text-center mb-14">
           <span className="text-[15px] font-semibold uppercase tracking-wider text-[#888884]">
             More projects I&apos;ve worked on recently
           </span>
         </div>
 
-        {/* 2. Deep Dive Projects in that same single unified flow */}
         <div className="max-w-4xl mx-auto space-y-24 mb-28">
           {caseStudies.map((project, idx) => (
             <motion.article
@@ -88,20 +84,18 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
                 href={`/work/${project.slug}`}
                 className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-2xl"
               >
-                {/* Large Project Image: Fit height to actual image, never cropped */}
                 <div className="relative overflow-hidden rounded-2xl bg-[#FAFAFA] border border-[#ECECE8] shadow-[0_8px_24px_rgba(0,0,0,0.03)] group-hover:shadow-[0_16px_36px_rgba(0,0,0,0.07)] transition-all duration-500">
                   <img
                     src={project.cover}
                     alt={project.title}
                     loading="lazy"
-                    className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                    className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                   <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 border border-[#ECECE8] flex items-center justify-center text-[#181818] group-hover:bg-[#8614FF] group-hover:text-white group-hover:border-[#8614FF] transition-all">
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>
 
-                {/* Typography below image */}
                 <div className="pt-5">
                   <div className="flex items-baseline justify-between gap-4">
                     <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#121212] group-hover:text-[#8614FF] transition-colors">
@@ -127,7 +121,6 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
           ))}
         </div>
 
-        {/* 3. Little Interventions in that same unified flow */}
         <div className="max-w-4xl mx-auto">
           <div className="text-[15px] font-semibold uppercase tracking-wider text-[#888884] mb-8">
             experiments & interactions
@@ -146,7 +139,6 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 className="group flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-xl"
               >
-                {/* Fit height to actual image size, never cropped */}
                 <div className="relative overflow-hidden rounded-xl bg-[#FAFAFA] border border-[#ECECE8] w-full shadow-[0_4px_12px_rgba(0,0,0,0.03)] group-hover:shadow-[0_10px_24px_rgba(0,0,0,0.07)] transition-all">
                   <img
                     src={item.image}
@@ -181,7 +173,6 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
         </div>
       </div>
 
-      {/* Gallery Modal Viewer */}
       <GalleryViewer
         key={selectedCollection?.slug}
         collection={selectedCollection}

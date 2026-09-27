@@ -58,7 +58,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
       <main className="flex-1 pt-28 pb-20">
         <article className="max-w-6xl mx-auto px-6 md:px-12">
-          {/* Back Navigation Bar */}
           <div className="mb-10">
             <Link
               href="/#projects"
@@ -69,9 +68,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* Project Header & Editorial Title */}
           <header className="pb-10 border-b border-[#ECECE8]">
-
             <h1 className="text-4xl font-bold tracking-tight text-[#181818] max-w-4xl">
               {frontmatter.title}
             </h1>
@@ -80,7 +77,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
               {frontmatter.description}
             </p>
 
-            {/* Metadata Matrix */}
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-[#ECECE8]">
               <div>
                 <div className="text-[15px] text-[#888884] uppercase tracking-wider">
@@ -120,7 +116,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </div>
           </header>
 
-          {/* Hero Cover Image: Fit height to actual image, never cropped */}
           <div className="my-12 overflow-hidden rounded-2xl border border-[#ECECE8] bg-[#FAFAFA] shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
             <img
               src={frontmatter.cover}
@@ -129,12 +124,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
             />
           </div>
 
-          {/* Compiled MDX Content */}
           <div className="prose-container py-6">
             <CaseStudyRenderer source={content} />
           </div>
 
-          {/* Bottom Pagination / Next & Prev Project */}
           <nav
             className="mt-20 pt-10 border-t border-[#ECECE8] grid grid-cols-1 sm:grid-cols-2 gap-6"
             aria-label="Adjacent Projects"

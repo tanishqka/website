@@ -41,9 +41,7 @@ export function JournalAbout() {
             aria-hidden="true"
           />
 
-          {/* Opened Book Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 relative z-0">
-            {/* ================= LEFT PAGE ================= */}
             <div className="relative flex flex-col justify-between pr-0 md:pr-4">
               <div>
                 <div className="flex items-center justify-between border-b border-[#E5E2D8] pb-4 mb-6">
@@ -60,15 +58,19 @@ export function JournalAbout() {
                 </h3>
 
                 <p className="text-base text-[#3A3A38] leading-relaxed mb-5">
-                  I&apos;m a Product Designer who&apos;s all about creating seamless digital experiences. Currently at Emergent, previously worked at Euler Motors where I was designing Infotainment systems for commercial EVs
+                  I&apos;m a Product Designer who enjoys turning complex ideas into simple, thoughtful digital experiences. I&apos;m currently designing at Emergent, and previously worked at Euler Motors, where I designed infotainment systems for commercial EVs
                 </p>
 
                 <p className="text-base text-[#3A3A38] leading-relaxed mb-6">
-                  I started off as an Interior Designer, and worked for over 2 years. Then I decided to flip the switch and pursue Interaction Design. Beyond design, I love watching movies, tv shows, and read books
+                  Before product design, I spent over two years working as an Interior Designer. Eventually, I found myself more interested in designing how people interact with things rather than just the things themselves - which led me to Interaction Design.
                 </p>
+
+                <p className="text-base text-[#3A3A38] leading-relaxed mb-6">
+                  When I&apos;m not designing, you&apos;ll probably find me watching a movie or TV show, getting lost in a good book, or simply exploring whatever catches my curiosity
+                  </p>
+
               </div>
 
-              {/* Bottom Stickers & Toolstack on Left Page */}
               <div className="mt-8 pt-6 border-t border-[#E5E2D8] flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <div className="text-[15px] uppercase text-[#888884] mb-1">
@@ -92,7 +94,6 @@ export function JournalAbout() {
               </div>
             </div>
 
-            {/* ================= RIGHT PAGE ================= */}
             <div className="relative flex flex-col justify-between pl-0 md:pl-4">
               <div>
                 <div className="flex items-center justify-between border-b border-[#E5E2D8] pb-4 mb-6">
@@ -102,7 +103,6 @@ export function JournalAbout() {
                 </div>
 
                 <div className="relative space-y-6">
-                  {/* Polaroid 1: Locked aspect ratio [16/10], never cropped */}
                   <motion.div
                     whileHover={{ scale: 1.03, rotate: 0 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -153,7 +153,6 @@ export function JournalAbout() {
                 </div>
               </div>
 
-              {/* Bottom Scrapbook Stickers & Barcode */}
               <div className="mt-8 pt-6 border-t border-[#E5E2D8] flex items-center justify-between gap-4">
                 <div className="w-36 sm:w-44">
                   <img

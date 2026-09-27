@@ -21,7 +21,6 @@ export function CaseStudyImage({
 
   if (!imageSrc) return null;
 
-  // Process maxWidth: could be a Tailwind class (e.g. "max-w-xl"), a number (600), or a CSS string ("600px", "80%")
   let inlineMaxWidth: string | undefined;
   let tailwindMaxWidth = "";
 
@@ -40,7 +39,6 @@ export function CaseStudyImage({
     }
   }
 
-  // Alignment classes for the container
   const alignmentClass =
     align === "left"
       ? "mr-auto text-left"

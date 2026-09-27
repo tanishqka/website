@@ -56,7 +56,6 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
       aria-label={`Open ${collection.title} gallery`}
       className="group relative cursor-pointer outline-none select-none flex flex-col items-center focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-2xl p-1"
     >
-      {/* Physical Folder Object (Compact 2x2 fit: Reference 2) */}
       <motion.div
         whileHover={{
           y: -6,
@@ -64,12 +63,10 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
         }}
         className="relative w-[210px] sm:w-[250px] h-[165px] sm:h-[185px] flex items-end justify-center"
       >
-        {/* 1. Back Folder Plate (Solid grey folder backing with top tab) */}
         <div className="absolute inset-x-0 bottom-0 top-3 rounded-2xl bg-[#D6D6D0] shadow-2xs overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-0 w-24 h-5 rounded-t-lg bg-[#D6D6D0]" />
         </div>
 
-        {/* 2. Photos / Prints Sticking Out */}
         <div className="absolute inset-x-0 bottom-8 top-0 flex items-center justify-center pointer-events-none">
           {images.map((img, i) => {
             const baseRot = i === 0 ? -10 : i === 1 ? 0 : 10;
@@ -108,15 +105,12 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
           })}
         </div>
 
-        {/* 3. Front Frosted Folder Cover (Translucent acrylic with stickers) */}
         <div
           style={{ zIndex: 10 }}
           className="relative w-full h-[120px] sm:h-[135px] rounded-2xl folder-frosted overflow-hidden flex flex-col justify-between p-3"
         >
-          {/* Top tab contour */}
           <div className="absolute top-0 left-0 w-24 h-3.5 rounded-tl-2xl bg-white/40 border-b border-white/60" />
 
-          {/* Stickers */}
           <div className="relative z-10 w-full flex items-center justify-between px-1 pt-1">
             <div className="w-10 sm:w-12 drop-shadow-2xs pointer-events-auto">
               <img
@@ -134,7 +128,6 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
             </div>
           </div>
 
-          {/* Bottom grooves */}
           <div className="w-full space-y-1 pb-0.5 opacity-40">
             <div className="w-full h-[1px] bg-[#999999]/30" />
             <div className="w-full h-[1px] bg-[#999999]/30" />
@@ -142,14 +135,18 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
         </div>
       </motion.div>
 
-      {/* 4. Text Label Floating Below Folder (Reference 2 style) */}
       <div className="mt-3 text-center">
         <h3 className="text-base sm:text-lg font-semibold text-[#181818] tracking-tight group-hover:text-[#8614FF] transition-colors">
           {collection.title}
         </h3>
         <span className="inline-block mt-1 text-[15px] text-[#888884] bg-[#F2F2EF] px-2.5 py-0.5 rounded-full">
-          {collection.images.length} photos
+          {collection.date}
         </span>
+        {collection.description && (
+          <p className="mt-2 text-[15px] text-[#666666] max-w-[220px] mx-auto leading-snug">
+            {collection.description}
+          </p>
+        )}
       </div>
     </motion.div>
   );

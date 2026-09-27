@@ -17,7 +17,6 @@ export function Header() {
           <span>Tanishka Bilgaiyan</span>
         </Link>
 
-        {/* Minimal Navigation */}
         <nav
           className="hidden md:flex items-center space-x-7 text-[15px] text-[#666666]"
           aria-label="Main Navigation"
@@ -42,7 +41,6 @@ export function Header() {
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-1 text-[#181818] hover:text-[#8614FF] transition-colors focus:outline-none"
@@ -53,7 +51,6 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile Drawer */}
       {isOpen && (
         <div className="md:hidden px-6 pt-3 pb-4">
           <nav className="flex flex-col space-y-2 text-base text-[#181818]">

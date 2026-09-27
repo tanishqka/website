@@ -27,16 +27,13 @@ export function HangingCards() {
   const [offset, setOffset] = useState(0);
   const animationFrameId = useRef<number | null>(null);
 
-  // Responsive dimensions: Mobile (width < 640px) vs Desktop
   const cardWidth = isMobile ? 116 : 168;
   const cardSpacing = isMobile ? 142 : 218;
   const wireTopY = isMobile ? 18 : 24;
   const wireSag = isMobile ? 42 : 72;
 
-  // Single cycle track width (10 cards)
   const baseTrackWidth = CARDS_DATA.length * cardSpacing;
 
-  // 3x replicated cards list so cycling is 100% continuous and never breaks
   const replicatedCards = useMemo(() => {
     return [
       ...CARDS_DATA.map((c, i) => ({ ...c, uniqueId: `rep0-${c.id}-${i}` })),
@@ -45,7 +42,6 @@ export function HangingCards() {
     ];
   }, []);
 
-  // Track viewport container width
   useEffect(() => {
     const updateDimensions = () => {
       if (containerRef.current) {
@@ -59,7 +55,6 @@ export function HangingCards() {
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
-  // Smooth continuous marquee loop along the thread — Keeps moving continuously without pausing
   useEffect(() => {
     const prefersReducedMotion =
       typeof window !== "undefined" &&
@@ -73,7 +68,6 @@ export function HangingCards() {
       const delta = (currentTime - lastTime) / 1000;
       lastTime = currentTime;
 
-      // Continuous movement speed (approx 36px per second) — Unconditional glide
       const move = delta * 36;
       setOffset((prev) => (prev + move) % baseTrackWidth);
 
@@ -87,7 +81,6 @@ export function HangingCards() {
     };
   }, [baseTrackWidth]);
 
-  // Exact continuous parabolic thread curve equations:
   const getWireY = (x: number) => {
     const halfW = containerWidth / 2;
     const normX = (x - halfW) / halfW;
@@ -96,7 +89,6 @@ export function HangingCards() {
 
   const getWireAngle = (x: number) => {
     const halfW = containerWidth / 2;
-    // Derivative dy/dx = -2 * wireSag * (x - halfW) / (halfW^2)
     const dy_dx = (-2 * wireSag * (x - halfW)) / (halfW * halfW);
     const angleRad = Math.atan(dy_dx);
     return (angleRad * 180) / Math.PI;
@@ -108,14 +100,12 @@ export function HangingCards() {
       className="relative w-full h-[270px] sm:h-[340px] overflow-x-clip overflow-y-visible select-none pointer-events-none"
       aria-label="Hanging photo cards moving along curved thread"
     >
-      {/* 1. Pixel Art Sky: Drifting clouds, flying airplane with contrail, and perching pixel birds */}
       <PixelArtSky
         containerWidth={containerWidth}
         getWireY={getWireY}
         getWireAngle={getWireAngle}
       />
 
-      {/* 2. Continuous Hanging Thread */}
       <svg
         className="absolute inset-x-0 top-0 w-full h-full pointer-events-none z-15"
         preserveAspectRatio="none"
@@ -130,13 +120,10 @@ export function HangingCards() {
         />
       </svg>
 
-      {/* 3. Infinite Smooth Marquee Cards Along the Thread (No hover pause, keep moving unconditionally) */}
       <div className="relative w-full h-full pointer-events-none z-20">
         {replicatedCards.map((card, idx) => {
-          // Continuous x coordinate anchored around middle replica
           const rawX = (idx * cardSpacing - baseTrackWidth) + offset;
 
-          // Cull cards that are safely beyond the viewport boundaries
           if (rawX < -cardWidth - 80 || rawX > containerWidth + cardWidth + 80) {
             return null;
           }
@@ -155,14 +142,12 @@ export function HangingCards() {
               }}
               className="absolute flex flex-col items-center pointer-events-none"
             >
-              {/* Clothespin / Tag attached directly to the wire */}
               <div className="relative z-20 -mb-1.5 sm:-mb-2 flex flex-col items-center">
                 <div
                   className={`${
                     isMobile ? "w-2.5 h-4.5 rounded-2xs" : "w-3.5 h-6 rounded-xs"
                   } bg-[#8614FF] shadow-2xs flex items-center justify-center`}
                 >
-                  {/* Punch eyelet */}
                   <div
                     className={`${
                       isMobile ? "w-1 h-1" : "w-1.5 h-1.5"
@@ -171,13 +156,11 @@ export function HangingCards() {
                 </div>
               </div>
 
-              {/* Physical Polaroid / Photo Card with locked aspect ratio */}
               <div
                 className={`w-full bg-white ${
                   isMobile ? "p-1.5 rounded-xl" : "p-2 rounded-2xl"
                 } shadow-[0_8px_20px_rgba(0,0,0,0.06)] border border-[#ECECE8]`}
               >
-                {/* Locked aspect ratio [4/5] on desktop and mobile — never cropped */}
                 <div className="overflow-hidden rounded-lg sm:rounded-xl bg-[#FAFAFA] aspect-[4/5] w-full flex items-center justify-center">
                   <img
                     src={card.image}
