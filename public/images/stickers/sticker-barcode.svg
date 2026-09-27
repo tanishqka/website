@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 70" width="180" height="70">
+      <rect width="180" height="70" rx="4" fill="#F8F8F5" stroke="#D8D8D4" stroke-width="1"/>
+      <!-- Barcode lines -->
+      <g transform="translate(15, 12)">
+        <rect x="0" y="0" width="3" height="32" fill="#181818"/>
+        <rect x="6" y="0" width="1.5" height="32" fill="#181818"/>
+        <rect x="10" y="0" width="4" height="32" fill="#181818"/>
+        <rect x="18" y="0" width="2" height="32" fill="#181818"/>
+        <rect x="23" y="0" width="5" height="32" fill="#181818"/>
+        <rect x="32" y="0" width="1.5" height="32" fill="#181818"/>
+        <rect x="36" y="0" width="3" height="32" fill="#181818"/>
+        <rect x="42" y="0" width="4.5" height="32" fill="#181818"/>
+        <rect x="50" y="0" width="2" height="32" fill="#181818"/>
+        <rect x="55" y="0" width="3" height="32" fill="#181818"/>
+        <rect x="62" y="0" width="6" height="32" fill="#181818"/>
+        <rect x="72" y="0" width="1.5" height="32" fill="#181818"/>
+        <rect x="76" y="0" width="3" height="32" fill="#181818"/>
+        <rect x="82" y="0" width="4" height="32" fill="#181818"/>
+        <rect x="90" y="0" width="2" height="32" fill="#181818"/>
+        <rect x="95" y="0" width="5" height="32" fill="#181818"/>
+        <rect x="104" y="0" width="1.5" height="32" fill="#181818"/>
+        <rect x="108" y="0" width="3" height="32" fill="#181818"/>
+        <rect x="115" y="0" width="5" height="32" fill="#181818"/>
+        <rect x="124" y="0" width="2" height="32" fill="#181818"/>
+        <rect x="130" y="0" width="4" height="32" fill="#181818"/>
+        <rect x="138" y="0" width="2" height="32" fill="#181818"/>
+        <rect x="144" y="0" width="4" height="32" fill="#181818"/>
+      </g>
+      <text x="90" y="58" font-family="monospace" font-size="9" fill="#181818" text-anchor="middle" letter-spacing="2">0926-DES-PORTFOLIO</text>
+    </svg>

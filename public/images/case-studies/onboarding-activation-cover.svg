@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+      <rect width="1200" height="800" fill="#F4F4F0"/>
+      <rect x="2" y="2" width="1196" height="796" fill="none" stroke="#D8D8D4" stroke-width="2"/>
+      <!-- Funnel journey visualization -->
+      <g transform="translate(150, 180)">
+        <path d="M 50 220 C 250 100, 550 320, 850 180" fill="none" stroke="#606EDB" stroke-width="4" stroke-linecap="round"/>
+        <!-- Step checkpoints -->
+        <circle cx="100" cy="200" r="24" fill="#181818"/>
+        <text x="100" y="206" font-family="monospace" font-size="13" fill="#F5F5F2" text-anchor="middle" font-weight="bold">01</text>
+        
+        <circle cx="450" cy="240" r="24" fill="#606EDB"/>
+        <text x="450" y="246" font-family="monospace" font-size="13" fill="#F5F5F2" text-anchor="middle" font-weight="bold">02</text>
+
+        <circle cx="800" cy="190" r="28" fill="#181818"/>
+        <text x="800" y="196" font-family="monospace" font-size="14" fill="#F5F5F2" text-anchor="middle" font-weight="bold">03</text>
+      </g>
+    </svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" width="160" height="100">
+      <rect width="160" height="100" rx="4" fill="#F8F8F5" stroke="#606EDB" stroke-width="2" stroke-dasharray="4 2"/>
+      <text x="80" y="35" font-family="monospace" font-size="11" font-weight="bold" fill="#606EDB" text-anchor="middle">FIELD ARCHIVE</text>
+      <line x1="20" y1="48" x2="140" y2="48" stroke="#606EDB" stroke-width="1"/>
+      <text x="80" y="68" font-family="sans-serif" font-size="18" font-weight="bold" fill="#181818" text-anchor="middle">DESIGNER</text>
+      <text x="80" y="85" font-family="monospace" font-size="9" fill="#666666" text-anchor="middle">PARIS / SAN FRANCISCO</text>
+    </svg>

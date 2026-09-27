@@ -1,0 +1,72 @@
+---
+title: "Infotainment System Design for Euler Motors"
+slug: "euler-infotainment"
+description: "At Euler Motors, I worked on Chimera, an infotainment and HMI system for commercial EV drivers focusing on driver research, ergonomic studies, and low-distraction automotive UX"
+date: "12/25"
+cover: "/images/case-studies/infotainment/cover.png"
+role: "UX Design Intern"
+type: "Vehicle Infotainment & HMI"
+timeline: "6 Months"
+client: "Euler Motors"
+featured: true
+order: 2
+---
+
+## The Core Thesis
+
+Traditional developer tooling has long separated visual mental models from executable runtime state. Our objective was simple yet formidable: **create a high-density canvas environment where engineers and designers could manipulate complex ASTs as intuitively as drawing on a whiteboard.**
+
+<PullQuote 
+  quote="The future of software authoring is not typing boilerplate; it is direct spatial manipulation of reactive systems."
+  author="Design Principle #1"
+/>
+
+<Stat 
+  value="4.2x" 
+  label="Faster workflow iteration speed recorded during alpha trials" 
+/>
+
+## Architecture of the Canvas
+
+Before sketching interface components, we defined the spatial primitives:
+- **Infinite panning plane** with sub-pixel snap grid
+- **Dynamic spline bezier linking** with automatic collision dodging
+- **Contextual property drawers** that morph based on node selection
+
+<TwoColumn
+  leftTitle="Visual Tree Manipulation"
+  leftText="Nodes operate as independent reactive units. Users can group, nest, and connect asynchronous endpoints with intuitive magnetic snapping."
+  rightTitle="Live Execution Feedback"
+  rightText="Every node exposes live execution telemetry directly on its border, shifting subtly from neutral to crimson when errors occur."
+/>
+
+<MediaRenderer 
+  src="/images/case-studies/builder-experience-detail-1.svg" 
+  alt="Spatial canvas node connections and property inspector"
+  caption="Fig 1.1 — Direct connection between API ingestion nodes and transform pipelines."
+  fullWidth={true}
+/>
+
+## Micro-Interactions & Tactility
+
+To prevent the canvas from feeling like another sterile enterprise diagrammer, we introduced physical principles:
+1. **Spring-damped panning** that feels weighted and deliberate.
+2. **Haptic sound feedback** when cables connect to valid ports.
+3. **Subtle depth stacking** where active nodes cast deeper drop shadows.
+
+<Gallery
+  images={[
+    {
+      src: "/images/case-studies/builder-experience-detail-1.svg",
+      caption: "Inspector state and layout properties"
+    },
+    {
+      src: "/images/case-studies/builder-experience-detail-2.svg",
+      caption: "Multi-select bounding box and batch alignment controls"
+    }
+  ]}
+/>
+
+## Outcomes & Retrospective
+
+Over a 6-month beta deployment across 2,400 product teams, users built and deployed over 14,000 spatial automation pipelines. The tactile approach proved that technical tools can possess profound editorial warmth and delight.
