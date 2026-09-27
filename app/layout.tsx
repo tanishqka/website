@@ -12,8 +12,16 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : undefined) ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ||
+  "https://tanishka.lol";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://tanishqka.design"),
+  metadataBase: new URL(siteUrl),
   title: "Tanishka Bilgaiyan",
   description:
     "Tanishka Bilgaiyan is a Product Designer crafting thoughtful digital experiences at the intersection of interaction, technology, and human behaviour.",
@@ -26,12 +34,15 @@ export const metadata: Metadata = {
     title: "Tanishka Bilgaiyan",
     description:
       "Tanishka Bilgaiyan is a Product Designer crafting thoughtful digital experiences at the intersection of interaction, technology, and human behaviour.",
+    url: siteUrl,
+    siteName: "Tanishka Bilgaiyan",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Tanishka Bilgaiyan",
+        type: "image/png",
       },
     ],
     type: "website",
@@ -42,6 +53,7 @@ export const metadata: Metadata = {
     description:
       "Tanishka Bilgaiyan is a Product Designer crafting thoughtful digital experiences at the intersection of interaction, technology, and human behaviour.",
     images: ["/og.png"],
+    creator: "@tanishqkaa",
   },
 };
 

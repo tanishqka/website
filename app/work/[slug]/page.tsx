@@ -35,9 +35,34 @@ export async function generateMetadata({
     };
   }
 
+  const title = `${data.frontmatter.title} | Case Study`;
+  const description = data.frontmatter.description;
+  const coverImage = data.frontmatter.cover;
+
   return {
-    title: `${data.frontmatter.title} | Case Study`,
-    description: data.frontmatter.description,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      siteName: "Tanishka Bilgaiyan",
+      type: "article",
+      images: coverImage
+        ? [
+            {
+              url: coverImage,
+              alt: data.frontmatter.title,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: coverImage ? [coverImage] : undefined,
+      creator: "@tanishqkaa",
+    },
   };
 }
 
