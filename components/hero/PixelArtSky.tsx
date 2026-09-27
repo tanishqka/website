@@ -179,17 +179,17 @@ function PixelAirplane({ containerWidth }: { containerWidth: number }) {
           className="drop-shadow-xs"
         >
           {/* Nose */}
-          <rect x="13" y="3" width="2" height="2" fill="#606EDB" />
+          <rect x="13" y="3" width="2" height="2" fill="#8614FF" />
           {/* Body */}
           <rect x="4" y="3" width="9" height="2" fill="#1C1C1C" />
           <rect x="7" y="2" width="5" height="1" fill="#FFFFFF" />
           {/* Wing top */}
-          <rect x="6" y="0" width="3" height="3" fill="#606EDB" />
+          <rect x="6" y="0" width="3" height="3" fill="#8614FF" />
           <rect x="7" y="1" width="2" height="2" fill="#181818" />
           {/* Wing bottom */}
-          <rect x="6" y="5" width="3" height="2" fill="#606EDB" />
+          <rect x="6" y="5" width="3" height="2" fill="#8614FF" />
           {/* Tail fin */}
-          <rect x="1" y="1" width="2" height="3" fill="#606EDB" />
+          <rect x="1" y="1" width="2" height="3" fill="#8614FF" />
           <rect x="0" y="2" width="2" height="1" fill="#1C1C1C" />
         </svg>
       </div>
@@ -324,8 +324,8 @@ function PixelBird({
             <rect x="5" y="2" width="2" height="1" fill="#E89820" />
             <rect x="3" y="1" width="2" height="2" fill="#181818" />
             <rect x="4" y="1" width="1" height="1" fill="#FFFFFF" />
-            <rect x="1" y="2" width="3" height="3" fill="#606EDB" />
-            <rect x="1" y="3" width="2" height="1" fill="#4854B8" />
+            <rect x="1" y="2" width="3" height="3" fill="#8614FF" />
+            <rect x="1" y="3" width="2" height="1" fill="#700FDB" />
             <rect x="0" y="3" width="1" height="2" fill="#181818" />
             <rect x="2" y="5" width="2" height="1" fill="#E89820" />
           </>
@@ -335,8 +335,8 @@ function PixelBird({
             <rect x="5" y="2" width="2" height="1" fill="#E89820" />
             <rect x="3" y="1" width="2" height="2" fill="#181818" />
             <rect x="4" y="1" width="1" height="1" fill="#FFFFFF" />
-            <rect x="1" y="2" width="3" height="2" fill="#606EDB" />
-            <rect x="2" y="0" width="2" height="2" fill="#4854B8" />
+            <rect x="1" y="2" width="3" height="2" fill="#8614FF" />
+            <rect x="2" y="0" width="2" height="2" fill="#700FDB" />
             <rect x="0" y="3" width="1" height="1" fill="#181818" />
           </>
         ) : (
@@ -345,8 +345,8 @@ function PixelBird({
             <rect x="5" y="2" width="2" height="1" fill="#E89820" />
             <rect x="3" y="1" width="2" height="2" fill="#181818" />
             <rect x="4" y="1" width="1" height="1" fill="#FFFFFF" />
-            <rect x="1" y="2" width="3" height="2" fill="#606EDB" />
-            <rect x="2" y="4" width="2" height="2" fill="#4854B8" />
+            <rect x="1" y="2" width="3" height="2" fill="#8614FF" />
+            <rect x="2" y="4" width="2" height="2" fill="#700FDB" />
             <rect x="0" y="2" width="1" height="1" fill="#181818" />
           </>
         )}

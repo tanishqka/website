@@ -19,7 +19,7 @@ export interface CaseStudyFrontmatter {
   title: string;
   slug: string;
   description: string;
-  date: string; // MM/YY format
+  date: string; // Month, YYYY format e.g. "February, 2026"
   cover: string;
   role: string;
   type: string;
@@ -34,11 +34,11 @@ export interface CaseStudy extends CaseStudyFrontmatter {
 }
 
 export interface Intervention {
-  id: string;
+  id?: string;
   title: string;
-  description: string;
-  date: string; // MM/YY format
   image: string;
   url: string;
-  tag: string;
+  tag?: string;
+  date?: string;
+  description?: string;
 }

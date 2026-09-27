@@ -7,7 +7,7 @@ interface PullQuoteProps {
 
 export function PullQuote({ quote, author }: PullQuoteProps) {
   return (
-    <blockquote className="my-10 pl-6 border-l-2 border-[#606EDB] bg-[#ECECE8]/40 py-4 pr-6 rounded-r-lg">
+    <blockquote className="my-10 pl-6 border-l-2 border-[#8614FF] bg-[#ECECE8]/40 py-4 pr-6 rounded-r-lg">
       <p className="text-xl md:text-2xl font-medium tracking-tight text-[#181818] italic leading-snug">
         “{quote}”
       </p>

@@ -86,7 +86,7 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
             >
               <Link
                 href={`/work/${project.slug}`}
-                className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#606EDB] rounded-2xl"
+                className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-2xl"
               >
                 {/* Large Project Image: Fit height to actual image, never cropped */}
                 <div className="relative overflow-hidden rounded-2xl bg-[#FAFAFA] border border-[#ECECE8] shadow-[0_8px_24px_rgba(0,0,0,0.03)] group-hover:shadow-[0_16px_36px_rgba(0,0,0,0.07)] transition-all duration-500">
@@ -96,7 +96,7 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
                     loading="lazy"
                     className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.01]"
                   />
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 border border-[#ECECE8] flex items-center justify-center text-[#181818] group-hover:bg-[#606EDB] group-hover:text-white group-hover:border-[#606EDB] transition-all">
+                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 border border-[#ECECE8] flex items-center justify-center text-[#181818] group-hover:bg-[#8614FF] group-hover:text-white group-hover:border-[#8614FF] transition-all">
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>
@@ -104,7 +104,7 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
                 {/* Typography below image */}
                 <div className="pt-5">
                   <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#121212] group-hover:text-[#606EDB] transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#121212] group-hover:text-[#8614FF] transition-colors">
                       {project.title}
                     </h3>
                     <span className="text-[15px] text-[#888884] font-medium shrink-0">
@@ -112,7 +112,7 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
                     </span>
                   </div>
 
-                  <p className="mt-2 text-[15px] text-[#666666] leading-relaxed max-w-2xl">
+                  <p className="mt-2 text-base text-[#666666] leading-relaxed max-w-2xl">
                     {project.description}
                   </p>
 
@@ -133,10 +133,10 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
             experiments & interactions
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
             {interventions.map((item, idx) => (
               <motion.a
-                key={item.id}
+                key={item.id || item.url || idx}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -144,32 +144,36 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="group flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-[#606EDB] rounded-xl"
+                className="group flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-xl"
               >
-                {/* Locked aspect ratio [4/3], object-contain so content fits without cropping */}
-                <div className="relative overflow-hidden rounded-xl bg-[#FAFAFA] border border-[#ECECE8] aspect-[4/3] w-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.03)] group-hover:shadow-[0_10px_24px_rgba(0,0,0,0.07)] transition-all">
+                {/* Fit height to actual image size, never cropped */}
+                <div className="relative overflow-hidden rounded-xl bg-[#FAFAFA] border border-[#ECECE8] w-full shadow-[0_4px_12px_rgba(0,0,0,0.03)] group-hover:shadow-[0_10px_24px_rgba(0,0,0,0.07)] transition-all">
                   <img
                     src={item.image}
                     alt={item.title}
                     loading="lazy"
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                   />
-                  <div className="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-white/90 border border-[#ECECE8] flex items-center justify-center text-[#181818] group-hover:bg-[#606EDB] group-hover:text-white transition-all">
+                  <div className="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-white/90 border border-[#ECECE8] flex items-center justify-center text-[#181818] group-hover:bg-[#8614FF] group-hover:text-white transition-all">
                     <ArrowUpRight className="w-3 h-3" />
                   </div>
                 </div>
 
                 <div className="pt-3">
-                  <div className="flex items-center justify-between text-[15px] text-[#888884] mb-1">
-                    <span className="text-[#606EDB] font-semibold">{item.tag}</span>
-                    <span>{item.date}</span>
-                  </div>
-                  <h4 className="text-base font-bold text-[#121212] group-hover:text-[#606EDB] transition-colors">
+                  {(item.tag || item.date) && (
+                    <div className="flex items-center justify-between text-[15px] text-[#888884] mb-1">
+                      {item.tag && <span className="text-[#8614FF] font-semibold">{item.tag}</span>}
+                      {item.date && <span>{item.date}</span>}
+                    </div>
+                  )}
+                  <h4 className="text-base font-bold text-[#121212] group-hover:text-[#8614FF] transition-colors">
                     {item.title}
                   </h4>
-                  <p className="mt-0.5 text-[15px] text-[#666666] leading-relaxed">
-                    {item.description}
-                  </p>
+                  {item.description && (
+                    <p className="mt-0.5 text-[15px] text-[#666666] leading-relaxed">
+                      {item.description}
+                    </p>
+                  )}
                 </div>
               </motion.a>
             ))}

@@ -14,7 +14,6 @@ export function Header() {
           href="/"
           className="group flex items-center gap-2 text-[15px] font-semibold tracking-tight text-[#181818] transition-colors"
         >
-          <span className="w-2 h-2 rounded-full bg-[#606EDB]" />
           <span>Tanishka Bilgaiyan</span>
         </Link>
 
@@ -24,20 +23,20 @@ export function Header() {
           aria-label="Main Navigation"
         >
           <Link
-            href="#projects"
-            className="hover:text-[#606EDB] transition-colors"
+            href="/#projects"
+            className="hover:text-[#8614FF] transition-colors"
           >
             Work
           </Link>
           <Link
-            href="#about"
-            className="hover:text-[#606EDB] transition-colors"
+            href="/#about"
+            className="hover:text-[#8614FF] transition-colors"
           >
             About
           </Link>
           <Link
-            href="#contact"
-            className="hover:text-[#606EDB] transition-colors"
+            href="/#contact"
+            className="hover:text-[#8614FF] transition-colors"
           >
             Contact
           </Link>
@@ -46,7 +45,7 @@ export function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-1 text-[#181818] hover:text-[#606EDB] transition-colors focus:outline-none"
+          className="md:hidden p-1 text-[#181818] hover:text-[#8614FF] transition-colors focus:outline-none"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
         >
@@ -57,25 +56,25 @@ export function Header() {
       {/* Mobile Drawer */}
       {isOpen && (
         <div className="md:hidden px-6 pt-3 pb-4">
-          <nav className="flex flex-col space-y-2 text-[15px] text-[#181818]">
+          <nav className="flex flex-col space-y-2 text-base text-[#181818]">
             <Link
-              href="#projects"
+              href="/#projects"
               onClick={() => setIsOpen(false)}
-              className="py-1 hover:text-[#606EDB]"
+              className="py-1.5 hover:text-[#8614FF]"
             >
               Work
             </Link>
             <Link
-              href="#about"
+              href="/#about"
               onClick={() => setIsOpen(false)}
-              className="py-1 hover:text-[#606EDB]"
+              className="py-1.5 hover:text-[#8614FF]"
             >
               About
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               onClick={() => setIsOpen(false)}
-              className="py-1 hover:text-[#606EDB]"
+              className="py-1.5 hover:text-[#8614FF]"
             >
               Contact
             </Link>

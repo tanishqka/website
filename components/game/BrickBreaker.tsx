@@ -60,7 +60,7 @@ export function BrickBreaker() {
     const brickHeight = 12;
 
     const rowColors = [
-      { color: "#606EDB", points: 30 },
+      { color: "#8614FF", points: 30 },
       { color: "#E04848", points: 20 },
       { color: "#2B2B2B", points: 15 },
       { color: "#888888", points: 10 },
@@ -257,7 +257,7 @@ export function BrickBreaker() {
             particleCount: 70,
             spread: 50,
             origin: { y: 0.8 },
-            colors: ["#606EDB", "#181818", "#F5F5F2"],
+            colors: ["#8614FF", "#181818", "#F5F5F2"],
           });
         } catch {}
       }
@@ -286,7 +286,7 @@ export function BrickBreaker() {
       ctx.fill();
 
       // Draw Ball
-      ctx.fillStyle = "#606EDB";
+      ctx.fillStyle = "#8614FF";
       ctx.beginPath();
       ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
       ctx.fill();
@@ -312,7 +312,7 @@ export function BrickBreaker() {
         <span>press <strong className="text-[#181818] font-semibold">space</strong> to start</span>
         {gameState === "playing" ? (
           <div className="flex items-center gap-3">
-            <span className="text-[#606EDB] font-semibold">score: {score}</span>
+            <span className="text-[#8614FF] font-semibold">score: {score}</span>
             <span className="text-[#888884]">lives: {lives}</span>
           </div>
         ) : (
@@ -338,8 +338,8 @@ export function BrickBreaker() {
           >
             {gameState === "idle" && (
               <div className="flex flex-col items-center">
-                <div className="w-10 h-10 rounded-full bg-[#EEF0FA] flex items-center justify-center text-[#606EDB] mb-2 shadow-2xs">
-                  <Play className="w-4 h-4 ml-0.5 fill-[#606EDB]" />
+                <div className="w-10 h-10 rounded-full bg-[#F3E8FF] flex items-center justify-center text-[#8614FF] mb-2 shadow-2xs">
+                  <Play className="w-4 h-4 ml-0.5 fill-[#8614FF]" />
                 </div>
                 <div className="text-[15px] text-[#666666]">
                   click anywhere or press space to play
@@ -354,7 +354,7 @@ export function BrickBreaker() {
                 </div>
                 <button
                   onClick={restartCurrent}
-                  className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#181818] text-white text-[15px] font-medium hover:bg-[#606EDB] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#181818] text-white text-[15px] font-medium hover:bg-[#8614FF] transition-colors"
                 >
                   <RotateCcw className="w-3 h-3" />
                   <span>play again</span>
@@ -369,7 +369,7 @@ export function BrickBreaker() {
                 </div>
                 <button
                   onClick={restartCurrent}
-                  className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#606EDB] text-white text-[15px] font-medium hover:bg-[#4E5BC4] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#8614FF] text-white text-[15px] font-medium hover:bg-[#700FDB] transition-colors"
                 >
                   <RotateCcw className="w-3 h-3" />
                   <span>play again</span>
@@ -389,11 +389,11 @@ export function BrickBreaker() {
           }}
           onTouchEnd={(e) => {
             e.preventDefault();
-            keys.current.left = false;
+            keys.current.right = false;
           }}
           onMouseDown={() => (keys.current.left = true)}
           onMouseUp={() => (keys.current.left = false)}
-          className="w-16 h-10 rounded-xl bg-white border border-[#ECECE8] active:bg-[#606EDB] active:text-white text-base font-bold text-[#181818] flex items-center justify-center shadow-xs"
+          className="w-16 h-10 rounded-xl bg-white border border-[#ECECE8] active:bg-[#8614FF] active:text-white text-base font-bold text-[#181818] flex items-center justify-center shadow-xs"
         >
           ←
         </button>
@@ -408,7 +408,7 @@ export function BrickBreaker() {
           }}
           onMouseDown={() => (keys.current.right = true)}
           onMouseUp={() => (keys.current.right = false)}
-          className="w-16 h-10 rounded-xl bg-white border border-[#ECECE8] active:bg-[#606EDB] active:text-white text-base font-bold text-[#181818] flex items-center justify-center shadow-xs"
+          className="w-16 h-10 rounded-xl bg-white border border-[#ECECE8] active:bg-[#8614FF] active:text-white text-base font-bold text-[#181818] flex items-center justify-center shadow-xs"
         >
           →
         </button>

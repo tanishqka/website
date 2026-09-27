@@ -10,7 +10,7 @@
       
       <!-- Top header bar -->
       <rect x="50" y="50" width="700" height="44" rx="8" fill="#ECECE8" stroke="#D8D8D4" stroke-width="1"/>
-      <circle cx="76" cy="72" r="6" fill="#606EDB"/>
+      <circle cx="76" cy="72" r="6" fill="#8614FF"/>
       <circle cx="94" cy="72" r="6" fill="#D8D8D4"/>
       <circle cx="112" cy="72" r="6" fill="#D8D8D4"/>
       <text x="140" y="76" font-family="monospace" font-size="12" fill="#181818" font-weight="600">EMERGENT // DESIGN-SYSTEM — SLIDE 01</text>
@@ -20,17 +20,17 @@
       <rect x="50" y="115" width="480" height="420" rx="10" fill="#F8F8F5" stroke="#D8D8D4" stroke-width="1"/>
       <!-- Inner interface preview -->
       <rect x="75" y="145" width="430" height="30" rx="6" fill="#EEEEEC"/>
-      <circle cx="95" cy="160" r="4" fill="#606EDB"/>
+      <circle cx="95" cy="160" r="4" fill="#8614FF"/>
       <rect x="110" y="156" width="180" height="8" rx="4" fill="#D8D8D4"/>
       
       <rect x="75" y="195" width="200" height="160" rx="8" fill="#ECECE8" stroke="#D8D8D4" stroke-width="1"/>
-      <circle cx="175" cy="275" r="32" fill="#606EDB" opacity="0.2"/>
-      <circle cx="175" cy="275" r="12" fill="#606EDB"/>
+      <circle cx="175" cy="275" r="32" fill="#8614FF" opacity="0.2"/>
+      <circle cx="175" cy="275" r="12" fill="#8614FF"/>
 
       <rect x="290" y="195" width="215" height="75" rx="8" fill="#EEEEEC"/>
       <rect x="290" y="280" width="215" height="75" rx="8" fill="#EEEEEC"/>
       
-      <path d="M 75 420 Q 200 370 320 440 T 505 400" fill="none" stroke="#606EDB" stroke-width="2.5"/>
+      <path d="M 75 420 Q 200 370 320 440 T 505 400" fill="none" stroke="#8614FF" stroke-width="2.5"/>
 
       <!-- Right column details -->
       <rect x="550" y="115" width="200" height="420" rx="10" fill="#ECECE8" stroke="#D8D8D4" stroke-width="1"/>
@@ -43,5 +43,5 @@
       <text x="575" y="275" font-family="sans-serif" font-size="11" fill="#444444">and state transitions.</text>
 
       <rect x="575" y="320" width="150" height="34" rx="6" fill="#F8F8F5" stroke="#D8D8D4" stroke-width="1"/>
-      <text x="650" y="342" font-family="monospace" font-size="10" fill="#606EDB" text-anchor="middle" font-weight="600">INSPECTION OK</text>
+      <text x="650" y="342" font-family="monospace" font-size="10" fill="#8614FF" text-anchor="middle" font-weight="600">INSPECTION OK</text>
     </svg>

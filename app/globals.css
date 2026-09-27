@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 :root {
   /* Bright, Airy, Editorial Palette */
@@ -13,12 +14,12 @@
   --border-dashed: #DCDCD8;
   --border-focus: #121212;
   
-  /* Signature Crimson Red */
-  --accent-crimson: #606EDB;
-  --accent-crimson-bright: #606EDB;
-  --accent-hover: #606EDB;
-  --accent-muted: rgba(96, 110, 219, 0.08);
-  --accent-light: #EEF0FA;
+  /* Signature Vibrant Violet Accent */
+  --accent-crimson: #8614FF;
+  --accent-crimson-bright: #8614FF;
+  --accent-hover: #700FDB;
+  --accent-muted: rgba(134, 20, 255, 0.08);
+  --accent-light: #F3E8FF;
 
   /* Subtle tactile shadows */
   --shadow-subtle: 0 2px 6px rgba(0, 0, 0, 0.03);
@@ -42,18 +43,24 @@
   --color-accent-hover: var(--accent-hover);
 
   --font-primary: var(--font-primary, "ESRebondGrotesque", system-ui, sans-serif);
+
+  --text-xs: 15px;
+  --text-sm: 15px;
 }
 
 /* Base Body Styling: Pure White, Airy Canvas, Single Font ESRebondGrotesque everywhere */
 html {
-  font-size: 15px;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   background-color: #FFFFFF;
   color: var(--text-primary);
   font-family: var(--font-primary), system-ui, -apple-system, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
@@ -62,16 +69,32 @@ body {
   padding: 0;
 }
 
-/* Enforce rule: Base font size 15px and no text below 15px anywhere */
+/* Enforce rule: Base font size and no text below 15px anywhere */
 .text-xs,
 .text-sm,
+.text-\[8px\],
+.text-\[9px\],
 .text-\[10px\],
 .text-\[11px\],
 .text-\[12px\],
 .text-\[13px\],
-.text-\[14px\] {
+.text-\[14px\],
+small,
+cite,
+caption,
+figcaption {
   font-size: 15px !important;
   line-height: 1.4 !important;
+}
+
+/* On mobile viewports: ensure clear legibility and never drop below 15px */
+@media (max-width: 640px) {
+  html, body {
+    font-size: 16px;
+  }
+  p, a, span, button, li, label, figcaption, cite, input {
+    font-size: max(15px, 1em);
+  }
 }
 
 /* Remove mono and serif font usage site-wide as requested */

@@ -9,8 +9,8 @@
         <!-- Swatches & widgets -->
         <g transform="translate(40, 120)">
           <rect x="0" y="0" width="180" height="140" rx="8" fill="#F0F0ED" stroke="#D8D8D4" stroke-width="1"/>
-          <text x="20" y="35" font-family="monospace" font-size="10" font-weight="bold" fill="#606EDB">BUTTON / PRIMARY</text>
-          <rect x="20" y="60" width="140" height="40" rx="6" fill="#606EDB"/>
+          <text x="20" y="35" font-family="monospace" font-size="10" font-weight="bold" fill="#8614FF">BUTTON / PRIMARY</text>
+          <rect x="20" y="60" width="140" height="40" rx="6" fill="#8614FF"/>
           <text x="90" y="85" font-family="sans-serif" font-size="12" font-weight="600" fill="#F5F5F2" text-anchor="middle">Action</text>
         </g>
         <g transform="translate(250, 120)">
@@ -24,13 +24,13 @@
           <text x="20" y="35" font-family="monospace" font-size="10" font-weight="bold" fill="#181818">AVATAR CLUSTER</text>
           <circle cx="50" cy="80" r="18" fill="#181818"/>
           <circle cx="80" cy="80" r="18" fill="#666666"/>
-          <circle cx="110" cy="80" r="18" fill="#606EDB"/>
+          <circle cx="110" cy="80" r="18" fill="#8614FF"/>
         </g>
         <g transform="translate(670, 120)">
           <rect x="0" y="0" width="180" height="140" rx="8" fill="#F0F0ED" stroke="#D8D8D4" stroke-width="1"/>
           <text x="20" y="35" font-family="monospace" font-size="10" font-weight="bold" fill="#181818">STATUS BADGE</text>
-          <rect x="20" y="65" width="80" height="26" rx="13" fill="#606EDB" opacity="0.15"/>
-          <text x="60" y="82" font-family="monospace" font-size="10" fill="#606EDB" text-anchor="middle" font-weight="bold">ONLINE</text>
+          <rect x="20" y="65" width="80" height="26" rx="13" fill="#8614FF" opacity="0.15"/>
+          <text x="60" y="82" font-family="monospace" font-size="10" fill="#8614FF" text-anchor="middle" font-weight="bold">ONLINE</text>
         </g>
       </g>
     </svg>

@@ -14,7 +14,7 @@ A minimal, editorial, tactile, and highly personal portfolio website crafted for
   - Surfaces: `#ECECE8`, `#EEEEEC`, `#F9F9F7`
   - Text: `#181818` (Primary), `#666666` (Secondary), `#888884` (Tertiary)
   - Borders: `#D8D8D4`
-  - Accent: Slate / Periwinkle Accent (`#606EDB` / `#4E5BC4`) for interactive states, links, tags, and focal points.
+  - Accent: Vibrant Violet Accent (`#8614FF` / `#700FDB`) for interactive states, links, tags, and focal points.
 - **Dot Grid Background**: A subtle, responsive CSS radial dot pattern sits behind the content (`24px 24px` grid).
 - **Default Font**: ESRebondGrotesque (self-hosted local fonts in `/public/fonts/`, Medium & Semibold normal/italic).
 

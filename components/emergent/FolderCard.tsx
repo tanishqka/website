@@ -54,7 +54,7 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
         }
       }}
       aria-label={`Open ${collection.title} gallery`}
-      className="group relative cursor-pointer outline-none select-none flex flex-col items-center focus-visible:ring-2 focus-visible:ring-[#606EDB] rounded-2xl p-1"
+      className="group relative cursor-pointer outline-none select-none flex flex-col items-center focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-2xl p-1"
     >
       {/* Physical Folder Object (Compact 2x2 fit: Reference 2) */}
       <motion.div
@@ -144,7 +144,7 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
 
       {/* 4. Text Label Floating Below Folder (Reference 2 style) */}
       <div className="mt-3 text-center">
-        <h3 className="text-base sm:text-lg font-semibold text-[#181818] tracking-tight group-hover:text-[#606EDB] transition-colors">
+        <h3 className="text-base sm:text-lg font-semibold text-[#181818] tracking-tight group-hover:text-[#8614FF] transition-colors">
           {collection.title}
         </h3>
         <span className="inline-block mt-1 text-[15px] text-[#888884] bg-[#F2F2EF] px-2.5 py-0.5 rounded-full">

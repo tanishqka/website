@@ -1,0 +1,50 @@
+---
+title: "Turning Inventory Chaos into Proactive Action"
+slug: "less"
+description: "Designed an AI-powered inventory system that helps retail managers spot stock issues early, reduce cognitive overload, and act before delays turn into lost sales"
+date: "June, 2026"
+cover: "/images/case-studies/less/cover.avif"
+role: "Product Designer"
+type: "Personal Project"
+timeline: "3 days"
+client: "Personal Project"
+featured: true
+order: 4
+---
+
+## Understanding the System
+To understand the domain, I spent time observing the floor at More Retail and Rajmandir Hypermarket in Delhi, speaking with floor staff and managers. What I found perfectly mirrored examples in Thinking in Systems book.
+
+![1](/images/case-studies/less/1.avif)
+
+Managers aren't just moving boxes; they are managing **Stocks** (physical inventory) and **Flows** (sales velocity and replenishment). The fundamental problem? **Delays**. Because human managers have bounded rationality (they can only process so much information at once), they react to empty shelves too late.
+
+### Delay in Feedback loop: Inflow(refill) → Stocks(inventory) → Outflow(sold or expire)
+
+This delay between a product selling out and the manager noticing creates what Meadows calls a **Reinforcing Feedback Loop** of chaos: Empty shelves lead to lower sales, which reduces working capital, leading to understaffing, and ultimately eroding customer trust
+
+## System Map
+This causal loop diagram maps the operations at less. The red loop on the right is the Out-of-Stock Loop
+![2](/images/case-studies/less/2.avif)
+
+When a delay occurs in inventory replenishment, it triggers the Bullwhip Effect over-ordering or stockouts oscillating wildly. To fix this, I identified three AI interventions acting as Balancing Feedback Loops:
+
+- **AI Demand Forecasting:** Eliminates the bullwhip by predicting flow rather than reacting to it
+- **Computer Vision & Task Orchestration:** Eliminates the delay in discovering empty spots
+- **Strategic Assortment AI:** Optimizes capital tied up in the "stock" of center-store stable goods vs. perishables
+
+## The Data View
+Operations managers suffer from severe cognitive overload. The Data View dashboard is designed to act as an external brain—a cognitive offloading tool.
+![3](/images/case-studies/less/3.webp)
+
+Instead of hunting for problems, the system uses AI Demand Forecasting to surface an Inventory Triage (e.g., 7 critical low stock, 15 near expiry). By calculating the "Est. Wastage Impact," we assign a financial weight to system failures, prompting immediate action.
+
+The AI Insights module at the bottom right tackles the Bullwhip Effect directly. By predicting future organic apple sales based on historical and contextual data, the manager can approve purchase orders (POs) proactively rather than reactively, smoothing out the replenishment flow
+
+## The Map View 
+Spreadsheets lack physical context. The toggle to the Map View is the core psychological hack of this product. Humans possess highly developed spatial memory; we navigate physical spaces far better than rows of data.
+![3](/images/case-studies/less/4.webp)
+
+Powered by the Computer Vision node from our system map, this view plots the health of the store spatially. A red dot in "Dairy & Eggs" instantly communicates a stockout or spillage without requiring the manager to read an SKU number.
+
+The integrated AI Co-pilot on the right summarizes these spatial anomalies. If a camera detects an empty shelf, the Intelligent Task Orchestration system translates that into a specific restock prompt for the manager. It aligns the digital system perfectly with the physical reality of the store.

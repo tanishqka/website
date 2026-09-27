@@ -13,7 +13,7 @@ export function CaseStudyGrid({ projects }: CaseStudyGridProps) {
         {/* Section Header */}
         <div className="max-w-2xl mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#ECECE8] bg-white text-[15px] font-medium uppercase tracking-wider text-[#666666] mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#606EDB]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8614FF]" />
             <span>Selected Case Studies // 01 — {String(projects.length).padStart(2, "0")}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black tracking-[-0.03em] text-[#121212] uppercase leading-[1.0]">

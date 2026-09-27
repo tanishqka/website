@@ -97,7 +97,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
           {/* Header Bar */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#D8D8D4] bg-[#ECECE8]">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#606EDB]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#8614FF]" />
               <div>
                 <h2 className="text-base sm:text-lg font-bold text-[#181818] tracking-tight">
                   {collection.title}
@@ -115,7 +115,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
 
               <button
                 onClick={onClose}
-                className="p-1.5 rounded-full text-[#666666] hover:text-[#181818] hover:bg-[#D8D8D4]/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#606EDB]"
+                className="p-1.5 rounded-full text-[#666666] hover:text-[#181818] hover:bg-[#D8D8D4]/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF]"
                 aria-label="Close gallery"
               >
                 <X className="w-5 h-5" />
@@ -132,7 +132,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
             {/* Previous Button */}
             <button
               onClick={handlePrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#F5F5F2]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#606EDB] hover:text-[#F5F5F2] hover:border-[#606EDB] flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#606EDB]"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#F5F5F2]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#8614FF] hover:text-[#F5F5F2] hover:border-[#8614FF] flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF]"
               aria-label="Previous frame"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -141,7 +141,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
             {/* Next Button */}
             <button
               onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#F5F5F2]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#606EDB] hover:text-[#F5F5F2] hover:border-[#606EDB] flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#606EDB]"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#F5F5F2]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#8614FF] hover:text-[#F5F5F2] hover:border-[#8614FF] flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF]"
               aria-label="Next frame"
             >
               <ChevronRight className="w-5 h-5" />
@@ -172,8 +172,8 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
           <div className="px-6 py-4 border-t border-[#D8D8D4] bg-[#F5F5F2] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="max-w-2xl">
               <div className="flex items-center gap-2 mb-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#606EDB]" />
-                <span className="text-[15px] uppercase tracking-wider text-[#606EDB] font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8614FF]" />
+                <span className="text-[15px] uppercase tracking-wider text-[#8614FF] font-semibold">
                   {currentImage.tag || `FRAME 0${currentIndex + 1}`}
                 </span>
               </div>
@@ -190,7 +190,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
                   onClick={() => setCurrentIndex(idx)}
                   className={`w-11 h-9 rounded-md overflow-hidden border-2 transition-all ${
                     idx === currentIndex
-                      ? "border-[#606EDB] scale-105 shadow-xs"
+                      ? "border-[#8614FF] scale-105 shadow-xs"
                       : "border-[#D8D8D4] opacity-50 hover:opacity-100"
                   }`}
                   aria-label={`Jump to frame ${idx + 1}`}

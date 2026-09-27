@@ -5,6 +5,7 @@ import PullQuote from "@/components/ui/PullQuote";
 import Stat from "@/components/ui/Stat";
 import TwoColumn from "@/components/ui/TwoColumn";
 import Gallery from "@/components/ui/Gallery";
+import CaseStudyImage from "@/components/ui/CaseStudyImage";
 
 interface CaseStudyRendererProps {
   source: string;
@@ -16,6 +17,8 @@ const customComponents = {
   Stat,
   TwoColumn,
   Gallery,
+  CaseStudyImage,
+  Image: CaseStudyImage,
   h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181818] mt-12 mb-6"
@@ -26,7 +29,7 @@ const customComponents = {
   ),
   h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className="text-2xl sm:text-3xl font-bold tracking-tight text-[#181818] mt-12 mb-4 border-b border-[#D8D8D4]/60 pb-3"
+      className="text-2xl font-bold tracking-tight text-[#181818] mt-12 mb-4"
       {...props}
     >
       {children}
@@ -42,7 +45,7 @@ const customComponents = {
   ),
   p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className="text-base sm:text-lg text-[#333333] leading-relaxed my-5"
+      className="text-base text-[#333333] leading-relaxed my-5"
       {...props}
     >
       {children}
@@ -56,7 +59,7 @@ const customComponents = {
   a: ({ children, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a
       href={href}
-      className="text-[#606EDB] underline underline-offset-4 decoration-1 hover:decoration-2 transition-all font-medium"
+      className="text-[#8614FF] underline underline-offset-4 decoration-1 hover:decoration-2 transition-all font-medium"
       {...props}
     >
       {children}
@@ -78,6 +81,15 @@ const customComponents = {
     </li>
   ),
   hr: () => <hr className="my-12 border-[#D8D8D4]" />,
+  img: ({ src, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    <img
+      src={src}
+      alt={alt || ""}
+      className="my-8 w-full h-auto block rounded-lg bg-[#FAFAFA]"
+      loading="lazy"
+      {...props}
+    />
+  ),
 };
 
 export async function CaseStudyRenderer({ source }: CaseStudyRendererProps) {

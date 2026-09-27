@@ -10,7 +10,7 @@ export default function Home() {
   const caseStudies = getAllCaseStudies();
 
   return (
-    <div className="relative min-h-screen flex flex-col dot-grid-bg selection:bg-[#EEF0FA] selection:text-[#606EDB]">
+    <div className="relative min-h-screen flex flex-col dot-grid-bg selection:bg-[#F3E8FF] selection:text-[#8614FF]">
       {/* 1. Minimal Non-Sticky Header */}
       <Header />
 

@@ -75,7 +75,7 @@ export function MediaRenderer({
 
       {caption && (
         <figcaption className="mt-2.5 text-[15px] text-[#666666] tracking-wide flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#606EDB] shrink-0" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#8614FF] shrink-0" />
           <span>{caption}</span>
         </figcaption>
       )}

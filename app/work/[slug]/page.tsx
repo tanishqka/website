@@ -62,39 +62,21 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <div className="mb-10">
             <Link
               href="/#projects"
-              className="group inline-flex items-center gap-2 text-[15px] uppercase tracking-wider text-[#666666] hover:text-[#606EDB] transition-colors"
+              className="group inline-flex items-center gap-2 text-[15px] text-[#666666] hover:text-[#8614FF] transition-colors"
             >
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-              <span>Back to Selected Work</span>
+              <span>Back to Work</span>
             </Link>
           </div>
 
           {/* Project Header & Editorial Title */}
           <header className="pb-10 border-b border-[#ECECE8]">
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#606EDB]" />
-              <span className="text-[15px] uppercase tracking-wider text-[#606EDB] font-semibold">
-                {frontmatter.type}
-              </span>
-              <span className="text-[15px] text-[#888884]">•</span>
-              <span className="text-[15px] text-[#666666]">
-                {frontmatter.date}
-              </span>
-              {frontmatter.client && (
-                <>
-                  <span className="text-[15px] text-[#888884]">•</span>
-                  <span className="text-[15px] text-[#666666]">
-                    {frontmatter.client}
-                  </span>
-                </>
-              )}
-            </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#181818] leading-[1.05] max-w-4xl">
+            <h1 className="text-4xl font-bold tracking-tight text-[#181818] max-w-4xl">
               {frontmatter.title}
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl text-[#666666] max-w-3xl leading-relaxed">
+            <p className="mt-6 text-lg text-[#666666] max-w-3xl leading-relaxed">
               {frontmatter.description}
             </p>
 
@@ -110,8 +92,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </div>
 
               <div>
-                <div className="text-[15px] text-[#888884] uppercase tracking-wider">
-                  Timeline
+                <div className="text-[15px] text-[#888884]">
+                  Duration
                 </div>
                 <div className="mt-1 text-[15px] font-semibold text-[#181818]">
                   {frontmatter.timeline || "3 Months"}
@@ -119,8 +101,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </div>
 
               <div>
-                <div className="text-[15px] text-[#888884] uppercase tracking-wider">
-                  Discipline
+                <div className="text-[15px] text-[#888884]">
+                  Category
                 </div>
                 <div className="mt-1 text-[15px] font-semibold text-[#181818]">
                   {frontmatter.type}
@@ -128,8 +110,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </div>
 
               <div>
-                <div className="text-[15px] text-[#888884] uppercase tracking-wider">
-                  Archive Date
+                <div className="text-[15px] text-[#888884]">
+                  Timeline
                 </div>
                 <div className="mt-1 text-[15px] font-semibold text-[#181818]">
                   {frontmatter.date}
@@ -160,13 +142,13 @@ export default async function CaseStudyPage({ params }: PageProps) {
             {prev ? (
               <Link
                 href={`/work/${prev.slug}`}
-                className="group p-6 rounded-2xl border border-[#ECECE8] bg-white hover:border-[#606EDB] shadow-xs transition-all flex flex-col justify-between"
+                className="group p-6 rounded-2xl border border-[#ECECE8] bg-white hover:border-[#8614FF] shadow-xs transition-all flex flex-col justify-between"
               >
                 <div className="flex items-center gap-2 text-[15px] text-[#888884] mb-2">
                   <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
                   <span>PREVIOUS PROJECT</span>
                 </div>
-                <div className="text-lg font-bold text-[#181818] group-hover:text-[#606EDB] transition-colors">
+                <div className="text-lg font-bold text-[#181818] group-hover:text-[#8614FF] transition-colors">
                   {prev.title}
                 </div>
               </Link>
@@ -177,13 +159,13 @@ export default async function CaseStudyPage({ params }: PageProps) {
             {next ? (
               <Link
                 href={`/work/${next.slug}`}
-                className="group p-6 rounded-2xl border border-[#ECECE8] bg-white hover:border-[#606EDB] shadow-xs transition-all flex flex-col justify-between sm:items-end text-left sm:text-right"
+                className="group p-6 rounded-2xl border border-[#ECECE8] bg-white hover:border-[#8614FF] shadow-xs transition-all flex flex-col justify-between sm:items-end text-left sm:text-right"
               >
                 <div className="flex items-center gap-2 text-[15px] text-[#888884] mb-2">
                   <span>NEXT PROJECT</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
-                <div className="text-lg font-bold text-[#181818] group-hover:text-[#606EDB] transition-colors">
+                <div className="text-lg font-bold text-[#181818] group-hover:text-[#8614FF] transition-colors">
                   {next.title}
                 </div>
               </Link>

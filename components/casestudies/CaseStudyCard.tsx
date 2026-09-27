@@ -24,7 +24,7 @@ export function CaseStudyCard({ project, featured = false }: CaseStudyCardProps)
     >
       <Link
         href={`/work/${project.slug}`}
-        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#606EDB] rounded-2xl"
+        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-2xl"
       >
         {/* Large Unboxed Project Image */}
         {/* Project Image: Fit height to actual image, never cropped */}
@@ -38,11 +38,11 @@ export function CaseStudyCard({ project, featured = false }: CaseStudyCardProps)
 
           {/* Quick Corner Tag */}
           <div className="absolute top-4 left-4 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-xs border border-[#ECECE8] text-[15px] font-medium text-[#181818]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#606EDB]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8614FF]" />
             <span>{project.type}</span>
           </div>
 
-          <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur-xs border border-[#ECECE8] flex items-center justify-center text-[#181818] group-hover:bg-[#606EDB] group-hover:text-white group-hover:border-[#606EDB] transition-all">
+          <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur-xs border border-[#ECECE8] flex items-center justify-center text-[#181818] group-hover:bg-[#8614FF] group-hover:text-white group-hover:border-[#8614FF] transition-all">
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </div>
         </div>
@@ -50,7 +50,7 @@ export function CaseStudyCard({ project, featured = false }: CaseStudyCardProps)
         {/* Project Typography & Metadata directly on the canvas */}
         <div className="pt-6 pb-2">
           <div className="flex items-baseline justify-between gap-4">
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#121212] group-hover:text-[#606EDB] transition-colors">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#121212] group-hover:text-[#8614FF] transition-colors">
               {project.title}
             </h3>
             <span className="text-[15px] text-[#888884] shrink-0 font-medium">
@@ -58,7 +58,7 @@ export function CaseStudyCard({ project, featured = false }: CaseStudyCardProps)
             </span>
           </div>
 
-          <p className="mt-2.5 text-[15px] sm:text-base text-[#666666] max-w-3xl leading-relaxed">
+          <p className="mt-2.5 text-base sm:text-lg text-[#666666] max-w-3xl leading-relaxed">
             {project.description}
           </p>
 
