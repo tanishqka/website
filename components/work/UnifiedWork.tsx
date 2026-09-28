@@ -122,8 +122,11 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="text-[15px] font-semibold uppercase tracking-wider text-[#888884] mb-8">
-            experiments & interactions
+          <h2 className="text-2xl tracking-tight font-semibold text-black mb-2">
+            Little interventions
+          </h2>
+          <div className="text-[1rem] font-medium text-black/75  mb-8">
+            A series where I make small tweaks to improve the digital products we use daily. They’re great, but they could be even <span className="text-[#8614FF] font-semibold">better!</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
