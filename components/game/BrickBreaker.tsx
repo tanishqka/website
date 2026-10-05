@@ -33,7 +33,7 @@ export function BrickBreaker() {
     y: virtualHeight - 20,
     width: 76,
     height: 8,
-    speed: 6.5,
+    speed: 5,
   });
 
   const ballRef = useRef({
@@ -42,7 +42,7 @@ export function BrickBreaker() {
     radius: 5,
     dx: 3.5,
     dy: -3.5,
-    speed: 4.5,
+    speed: 3,
   });
 
   const bricksRef = useRef<Brick[]>([]);
@@ -327,14 +327,14 @@ export function BrickBreaker() {
             {gameState === "game_over" && (
               <div className="flex flex-col items-center">
                 <div className="text-[15px] font-semibold text-[#181818] mb-1">
-                  game over — score {score}
+                  Game Over. You scored {score}
                 </div>
                 <button
                   onClick={restartCurrent}
                   className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#181818] text-white text-[15px] font-medium hover:bg-[#8614FF] transition-colors"
                 >
                   <RotateCcw className="w-3 h-3" />
-                  <span>play again</span>
+                  <span>Play Again</span>
                 </button>
               </div>
             )}

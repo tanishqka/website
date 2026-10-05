@@ -53,7 +53,7 @@ export function UnifiedWork({ caseStudies }: UnifiedWorkProps) {
           </span>
         </div>
 
-        <div className="max-w-[600px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 mb-28 justify-items-center">
+        <div className="max-w-[600px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 mb-28 justify-items-stretch sm:justify-items-center">
           {emergentCollections.map((collection, index) => (
             <FolderCard
               key={collection.slug}

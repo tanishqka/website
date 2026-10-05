@@ -1,7 +1,7 @@
 export interface EmergentImage {
   src: string;
   alt: string;
-  description: string;
+  description?: string;
   tag?: string;
 }
 
@@ -9,7 +9,9 @@ export interface EmergentCollection {
   slug: string;
   title: string;
   date: string;
-  description: string;
+  description?: string;
+  shortDescription?: string;
+  detailedDescription?: string;
   accentColor?: string;
   images: EmergentImage[];
 }

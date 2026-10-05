@@ -66,6 +66,8 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
 
   const currentImage = collection.images[currentIndex];
   const totalImages = collection.images.length;
+  const detailedDescription =
+    collection.detailedDescription || collection.description;
 
   return (
     <AnimatePresence>
@@ -88,44 +90,49 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 16 }}
           transition={{ type: "spring", stiffness: 320, damping: 28 }}
-          className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-2xl border border-[#D8D8D4] bg-[#F5F5F2] shadow-2xl overflow-hidden z-10"
+          className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-2xl border border-[#D8D8D4] bg-[#FCFCFC] shadow-2xl overflow-hidden z-10"
         >
-          <div className="flex items-center justify-between px-6 py-4 border-b border-[#D8D8D4] bg-[#ECECE8]">
-            <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#8614FF]" />
+          <div className="px-5 sm:px-6 py-4 border-b border-[#D8D8D4] bg-[#FCFCFC]">
+            <div className="flex items-center justify-between gap-4">
               <div>
                 <h2 className="text-base sm:text-lg font-bold text-[#181818] tracking-tight">
                   {collection.title}
                 </h2>
-                <div className="text-[15px] text-[#666666]">
-                 {collection.date}
+                <div className="text-[13px] sm:text-[14px] text-[#888884]">
+                  {collection.date}
                 </div>
+              </div>
+
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="text-[13px] sm:text-[14px] text-[#181818] font-medium bg-[#FCFCFC] px-3.5 py-1 rounded-full border border-[#D8D8D4]">
+                  {String(currentIndex + 1).padStart(2, "0")} / {String(totalImages).padStart(2, "0")}
+                </span>
+
+                <button
+                  onClick={onClose}
+                  className="p-1.5 rounded-full text-[#666666] hover:text-[#181818] hover:bg-[#FCFCFC]/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FAFAFA]"
+                  aria-label="Close gallery"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <span className="text-[15px] text-[#181818] font-medium bg-[#F5F5F2] px-3.5 py-1 rounded-full border border-[#D8D8D4]">
-                {String(currentIndex + 1).padStart(2, "0")} / {String(totalImages).padStart(2, "0")}
-              </span>
-
-              <button
-                onClick={onClose}
-                className="p-1.5 rounded-full text-[#666666] hover:text-[#181818] hover:bg-[#D8D8D4]/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF]"
-                aria-label="Close gallery"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+            {detailedDescription && (
+              <p className="mt-3 text-sm sm:text-[15px] text-[#555555] leading-relaxed w-full">
+                {detailedDescription}
+              </p>
+            )}
           </div>
 
           <div
-            className="relative flex-1 bg-[#ECECE8]/40 p-4 sm:p-8 flex items-center justify-center overflow-hidden"
+            className="relative flex-1 bg-[#FCFCFC]/40 p-4 sm:p-8 flex items-center justify-center overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
             <button
               onClick={handlePrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#F5F5F2]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#8614FF] hover:text-[#F5F5F2] hover:border-[#8614FF] flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF]"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#FCFCFC]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#FAFAFA] hover:text-[#000000]/50 hover:border-[#000000]/50 flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FAFAFA]"
               aria-label="Previous frame"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -133,7 +140,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
 
             <button
               onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#F5F5F2]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#8614FF] hover:text-[#F5F5F2] hover:border-[#8614FF] flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8614FF]"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#FCFCFC]/90 border border-[#D8D8D4] text-[#181818] hover:bg-[#FAFAFA] hover:text-[#000000]/50 hover:border-[#000000]/50 flex items-center justify-center transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FAFAFA]"
               aria-label="Next frame"
             >
               <ChevronRight className="w-5 h-5" />
@@ -147,7 +154,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.2 }}
-                  className="rounded-xl overflow-hidden border border-[#D8D8D4] bg-[#F5F5F2] shadow-lg max-h-[50vh]"
+                  className="rounded-xl overflow-hidden border border-[#D8D8D4] bg-[#FCFCFC] shadow-lg max-h-[50vh]"
                 >
                   <img
                     src={currentImage.src}
@@ -159,17 +166,11 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
             </div>
           </div>
 
-          <div className="px-6 py-4 border-t border-[#D8D8D4] bg-[#F5F5F2] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="max-w-2xl">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8614FF]" />
-                <span className="text-[15px] uppercase tracking-wider text-[#8614FF] font-semibold">
-                  {currentImage.tag || `FRAME 0${currentIndex + 1}`}
-                </span>
-              </div>
-              <p className="text-[15px] text-[#181818] leading-relaxed">
-                {currentImage.description}
-              </p>
+          <div className="px-6 py-3.5 border-t border-[#D8D8D4] bg-[#FCFCFC] flex items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-semibold">
+                {currentImage.tag || `FRAME ${String(currentIndex + 1).padStart(2, "0")}`}
+              </span>
             </div>
 
             <div className="flex items-center gap-2 shrink-0 overflow-x-auto py-1">
@@ -179,7 +180,7 @@ export function GalleryViewer({ collection, onClose }: GalleryViewerProps) {
                   onClick={() => setCurrentIndex(idx)}
                   className={`w-11 h-9 rounded-md overflow-hidden border-2 transition-all ${
                     idx === currentIndex
-                      ? "border-[#8614FF] scale-105 shadow-xs"
+                      ? "border-[#FAFAFA] scale-105 shadow-xs"
                       : "border-[#D8D8D4] opacity-50 hover:opacity-100"
                   }`}
                   aria-label={`Jump to frame ${idx + 1}`}

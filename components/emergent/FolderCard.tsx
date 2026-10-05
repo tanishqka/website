@@ -54,7 +54,7 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
         }
       }}
       aria-label={`Open ${collection.title} gallery`}
-      className="group relative cursor-pointer outline-none select-none flex flex-col items-center focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-2xl p-1"
+      className="group relative cursor-pointer outline-none select-none flex flex-col items-center w-full focus-visible:ring-2 focus-visible:ring-[#8614FF] rounded-2xl p-1"
     >
       <motion.div
         whileHover={{
@@ -142,12 +142,13 @@ export function FolderCard({ collection, index, onClick }: FolderCardProps) {
         <span className="inline-block mt-1 text-[15px] text-[#888884] bg-[#F2F2EF] px-2.5 py-0.5 rounded-full">
           {collection.date}
         </span>
-        {collection.description && (
-          <p className="mt-2 text-[15px] text-[#666666] max-w-[220px] mx-auto leading-snug">
-            {collection.description}
-          </p>
-        )}
       </div>
+
+      {(collection.shortDescription || collection.description) && (
+        <p className="mt-2 text-[15px] text-[#666666] text-center w-full sm:max-w-[260px] mx-auto leading-relaxed px-4 sm:px-0">
+          {collection.shortDescription || collection.description}
+        </p>
+      )}
     </motion.div>
   );
 }

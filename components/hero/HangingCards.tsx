@@ -146,7 +146,7 @@ export function HangingCards() {
                 <div
                   className={`${
                     isMobile ? "w-2.5 h-4.5 rounded-2xs" : "w-3.5 h-6 rounded-xs"
-                  } bg-[#8614FF] shadow-2xs flex items-center justify-center`}
+                  } bg-[#D0D0CA] shadow-2xs flex items-center justify-center`}
                 >
                   <div
                     className={`${
